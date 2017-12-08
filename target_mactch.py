@@ -1,9 +1,11 @@
+
 import csv, random, sys, string, locale
 def main():
     temp = input("What is your target sequence? ")
     temp2 = find_target(temp)
     ##print(f"IDs that contain your target sequence are in the list : {temp2[0]}")
     return temp2
+
 
 def find_target(target_seq):
     with open('seq_log.csv', 'r') as seq_log:
@@ -13,6 +15,7 @@ def find_target(target_seq):
         for line in log_open:
             temp_seq = line['Sequence']
             if(target_seq in temp_seq):
+
                 ##print(f"Your target sequence oppears in {line['seq_ID']} at index {temp_seq.find(target_seq)}.")
                 ID_list.append(line['seq_ID'])
                 ID_list.append(target_seq)
@@ -34,4 +37,3 @@ def calculation(target_seq):
     return counter_list
                         
                 
-##main()
