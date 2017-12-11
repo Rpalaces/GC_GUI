@@ -5,7 +5,6 @@ import csv, random, sys, string, locale
 def main():
     temp = input("What is your target sequence? ")
     temp2 = find_target(temp)
-    ##print(f"IDs that contain your target sequence are in the list : {temp2[0]}")
     return temp2
 
 # this function will taake the user's input as a parameter, and check whether the target sequence whether appear in each sequence.
@@ -25,7 +24,7 @@ def find_target(target_seq):
                 ID_list.append(target_seq)
                 return ID_list
         return "Target sequence is not in data base."
-    
+
 # This function just take the target sequence, calculate the numbers of AT and GC.
 def calculation(target_seq):
     AT_counter = 0;
