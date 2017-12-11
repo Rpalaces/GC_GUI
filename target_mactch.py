@@ -1,8 +1,8 @@
 
 import csv, random, sys, string, locale
-def main():
-    temp = input("What is your target sequence? ")
-    temp2 = find_target(temp)
+def seq_find(text):
+    
+    temp2 = find_target(text)
     ##print(f"IDs that contain your target sequence are in the list : {temp2[0]}")
     return temp2
 

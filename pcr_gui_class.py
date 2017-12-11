@@ -1,6 +1,5 @@
 import csv, random, sys, string, locale
-from target_mactch import find_target, calculation, main
-
+from target_mactch import find_target, calculation, seq_find
 
 ##File: pcr_gui_class.py
 ##Date:1/23/2017
@@ -59,15 +58,16 @@ def test_primer(prim_list):
         return False
     return True
             
-def primer():
+def primer(seq):
+    
     primer_list = []
     for_prim_data = []
     rev_prim_data = []
     for_prim = ''
     rev_prim = ''
-    targ_seq = main()
+    targ_seq = seq
 
-    print(len(targ_seq[1]))
+    #print(len(targ_seq[1]))
     
     for i in range(0, 20):   ##build a max length forward primer.
         for_prim += targ_seq[1][i]
@@ -96,7 +96,9 @@ def primer():
     
     if test_primer(primer_list) == False:
         return False
+    #print (primer_list[0][0])
     return primer_list
+    
     
 def get_kbp_size():
     kbp_size = int(input("Enter kbp value: "))
@@ -170,7 +172,8 @@ def generate_rand_dna_seq():   #We used this to populate our data base.
         print(seq_comp)
     ##csv_file.close()
     
-print(primer())
+
+
 ##generate_rand_dna_seq()
 ##print_seq_log()
 ##print("Get seq_ID returns = ", get_sequence('seq1R'))
