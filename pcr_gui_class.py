@@ -1,5 +1,5 @@
 ##File: pcr_gui_class.py
-##Date:1/23/2017
+##Date:11/23/2017
 ##Author: Jesse V. Anacleto
 ##Class/Instr/TA: CST250 Multimedia/Biblarz/Crews
 ##Assignment:  CST Final Project

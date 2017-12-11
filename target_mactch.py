@@ -1,9 +1,19 @@
+## Name :       Chenyu Su
+## Course:      CST 205 Multimedia Desgin
+## Project:     Primary Calculator
+## Date:        12/10/2017
+## Description: All my functions are cooperating with the primer function. The main function will ask user to input the target sequence,
+##              and then pass to the find_target function. Then, the find_target function will taake the user's input as a parameter,
+##              and check whether the target sequence whether appear in each sequence. If it does, the function will append the sequence
+##              Id into a list, and returns. else, it will print "Target sequence is not in data base." as the answer. 
+##              The calculation function just take the target sequence, and calculate the numbers of AT and GC. After the calculation finished
+##              this function will return a list which only contains two numbers that refer to the numbers of AT and GC to the primer function.
+## Note:        Jessie and Roberte made modifications to this code. It might not be the same as it was originally.
 
 import csv, random, sys, string, locale
 def seq_find(text):
     
     temp2 = find_target(text)
-    ##print(f"IDs that contain your target sequence are in the list : {temp2[0]}")
     return temp2
 
 
@@ -16,7 +26,7 @@ def find_target(target_seq):
             temp_seq = line['Sequence']
             if(target_seq in temp_seq):
 
-                ##print(f"Your target sequence oppears in {line['seq_ID']} at index {temp_seq.find(target_seq)}.")
+                
                 ID_list.append(line['seq_ID'])
                 ID_list.append(target_seq)
                 return ID_list

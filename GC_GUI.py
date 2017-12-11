@@ -1,3 +1,13 @@
+##File: GC_GUI.py
+##Date:12/11/2017  9:27 am
+##Author: Roberto Palacios
+##Class/Instr/TA: CST250 Multimedia/Biblarz/Crews
+##Assignment:  CST Final Project
+##Decription:  This is the file that privdes the GUI for the primer function.  It takes a
+##target sequence as a user input and displays the results of the tests.
+
+
+
 import sys
 from PyQt5.QtWidgets import (QApplication, QPushButton, QDialog, QProgressBar, QLabel,
                              QLineEdit, QVBoxLayout, QHBoxLayout, QGroupBox)
@@ -194,6 +204,7 @@ class MyWindow(QDialog):
         self.labelkbp2.setText(f'Number of Base Pairs: {kbp2}')
         self.labelTM.setText(f'Temperature: {tm} Degrees Celsius')
         self.labelTM2.setText(f'Temperature: {tm2} Degrees Celsius')
+        self.togg_btn.setText('Fahrenheit')
 
         if self.timer.isActive():
             self.timer.stop()
