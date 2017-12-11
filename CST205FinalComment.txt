@@ -1,0 +1,17 @@
+Course: CST205 Multimedia Design
+Title: Primer Calculator
+Abstract: 
+	It generates and tests both the forward and reverse primer for GC percentage, GC clamps, and melting temperature. 
+	If either primer fails even a test, the function
+ 		display the word "Failure". 
+	If they both pass all three tests, it returns primer sequence along with the primer data.
+Authors:  Jesse Anacleto, Roberto Palacios, Chenyu Su
+Date: 12/11/2017
+Who worked on which functions/classes/files?
+	Jesse Anacleto worked on the primer functions.
+	Chenyu Su worked on sequences matching functions(heavily used in the primer function) and documentation.
+	Roberto Palacios worked on user interfaces.
+Descriptions of important code blocks:
+	The primary function is the workhorse function that tests the target sequence and creates the primers.  
+        The target sequence is entered into a stylish gui, that displays the results of the primer functions tests.
+Link to GitHub repository: https://github.com/Rpalaces/GC_GUI 

@@ -1,13 +1,10 @@
-import csv, random, sys, string, locale
-from target_mactch import find_target, calculation, seq_find
-
 ##File: pcr_gui_class.py
 ##Date:1/23/2017
 ##Author: Jesse V. Anacleto
 ##Class/Instr/TA: CST250 Multimedia/Biblarz/Crews
 ##Assignment:  CST Final Project
 ##Decription:  This file will contain the methods and variables I will use to create
-##             a PCR(Polmerase Chain Reaction) Calculator - that is just a working title.  At first, we only wanted to
+##             a Primer Calculator - that is just a working title.  At first, we only wanted to
 ##             calculate a GC Percentage, but there are many more relevant calculations
 ##             we can make and present visually.  This is primarily a tool for education,
 ##             one I wanted to work on to help increase my own understanding of the  basic PCR process.
@@ -18,13 +15,14 @@ from target_mactch import find_target, calculation, seq_find
 ##             if my understanding is correct) - That's all just fancy talk for 1 - 10,000 base pairs.  The function will automatically
 ##             generate the sequence's compliment, which will be necessary for designing the primers (the oligonucleotide components - short DNA strands)
 ##             that guide the assembly of the target DNA sequence (the portion of the original DNA sequence we wish to amplify (replicate, copy, etc).
-##             Both sequences will be added to a dictionary of DNA sequences that will be stored in a file.
-##             2) The second feature I will add will allow the user to search the dictionary of DNA sequences to see if the
-##             target DNA strand is present in any of them, and return/display a list of strands that possess the target sequence, represented by their unique key.
-##             3) The third feature will allow the user to create and store a pair of primers that will be used assemble the target DNA sequence
-##             There are guidelines for designing primers, so there will also need to be functions to check if the primers meet certain
-##             conditions.
-##             Example: They must end in either a G or a C, and they must have a GCPercentage of about 50% - 60%.
+##             Both sequences will be added to a csv file. 
+##             3) The second feature will allow the user to create and store a pair of primers (of length 20 Bp) that will be used assemble the target DNA sequence
+##             There are guidelines for designing primers, and I am testing three of those guidelines:
+##             Example: They must end in either a G or a C in the 3' end, they must have a GCPercentage of about 50% - 60%, and their melting temperature should not exceed 65 degrees celsius.
+
+
+import csv, random, sys, string, locale
+from target_mactch import find_target, calculation, seq_find
 
 
 def check_gc_clamps(f_prim, r_prim):
@@ -95,7 +93,9 @@ def primer(seq):
     primer_list.append(rev_prim_data)
     
     if test_primer(primer_list) == False:
-        return False
+        primer_list[0][0] = 'FAILURE'
+        primer_list[1][0] = 'FAILURE'
+        return primer_list
     #print (primer_list[0][0])
     return primer_list
     

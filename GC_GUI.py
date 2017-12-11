@@ -190,8 +190,8 @@ class MyWindow(QDialog):
         tm2 = (str(gc_list[1][4]))
         self.labelPrime.setText(f'Primer: {prime}')
         self.labelPrime2.setText(f'Reverse Primer: {rev_Prime}')
-        self.labelkbp.setText(f'Number of Kilobase Pairs: {kbp}')
-        self.labelkbp2.setText(f'Number of Kilobase Pairs: {kbp2}')
+        self.labelkbp.setText(f'Number of Base Pairs: {kbp}')
+        self.labelkbp2.setText(f'Number of Base Pairs: {kbp2}')
         self.labelTM.setText(f'Temperature: {tm} Degrees Celsius')
         self.labelTM2.setText(f'Temperature: {tm2} Degrees Celsius')
 
